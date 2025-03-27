@@ -1,5 +1,9 @@
 package com.example.hellocompose.login
 
+import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.fillMaxHeight
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
@@ -21,16 +25,24 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
 }
 
 @Preview(
-    widthDp = 100,
+    // widthDp = 100,
     heightDp = 50,
     showSystemUi = true,
-    device = Devices.PIXEL_FOLD
+    device = Devices.PIXEL_4_XL
 )
 @Composable
 fun ExamplePreview(){
-    Example("Engineer") // In order to not break a Preview with parameters
+    Example("Engineer")
 }
+
 @Composable
-fun Example(job:String){
-    Text("Gabriel es un $job") // Preview With parameters
+fun Example(job: String) {
+    Text(
+        text = "Gabriel es un $job",
+        modifier = Modifier
+            .fillMaxWidth()
+            .height(40.dp)
+            .background(Color.Red)
+            .padding(all = 10.dp)
+    )
 }
